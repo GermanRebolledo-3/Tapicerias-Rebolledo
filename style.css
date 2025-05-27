@@ -1,0 +1,419 @@
+/* Importar una fuente elegante de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+/* Colores de la paleta: */
+/* --primary-color: #6A8EAE;  Azul suave/grisáceo para acentos */
+/* --secondary-color: #A7BCCF;  Azul más claro para fondos */
+/* --text-color: #333333;  Gris oscuro para texto principal */
+/* --light-bg: #F8F8F8;  Fondo muy claro */
+/* --white-color: #FFFFFF; */
+/* --dark-bg: #2C3E50;  Gris oscuro para footer/header */
+/* --accent-bg: #E0E4E7;  Un gris intermedio para secciones */
+
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif; /* Fuente general más legible */
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8; /* Fondo muy claro */
+    color: #333333; /* Texto principal gris oscuro */
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo para contenido */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    color: #2C3E50; /* Color oscuro para títulos */
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700; /* Negrita para títulos */
+}
+
+h2 {
+    font-size: 2.5em; /* Tamaño grande para títulos de sección */
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: justify; /* Justificado para mejor lectura en textos largos */
+    
+}
+
+/* Header y Navegación */
+header {
+    background: #2C3E50; /* Gris oscuro para header */
+    color: #FFFFFF;
+    padding: 15px 0;
+    position: sticky; /* Sticky nav bar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #6A8EAE; /* Color de acento para el logo */
+    float: left;
+    padding-left: 20px; /* Espacio a la izquierda */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
+    font-size: 1.1em;
+}
+
+header nav ul li a:hover {
+    color: #6A8EAE; /* Color de acento al pasar el mouse */
+}
+
+/* Carrusel de Imágenes (Sección Inicio) */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 600px; /* Altura fija para el carrusel */
+    background-color: #ddd; /* Fondo de carga */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    display: none; /* Oculta todas las slides por defecto */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeEffect 4s; /* Efecto de transición */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área */
+    filter: brightness(70%); /* Oscurece un poco la imagen para que el texto resalte */
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente para el texto */
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px;
+}
+
+.carousel-caption h2 {
+    color: white;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-caption p {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Puntos de navegación del carrusel */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: #6A8EAE; /* Color de acento para el dot activo */
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.7;}
+    to {opacity: 1;}
+}
+
+/* Secciones de Contenido */
+.content-section {
+    padding: 60px 0;
+    margin-bottom: 0; /* Elimina margen entre secciones para transiciones de color */
+}
+
+.content-section:nth-of-type(odd) { /* Sección impar (Quiénes Somos) */
+    background-color: #F8F8F8; /* Fondo claro */
+    color: #333333;
+}
+
+.content-section:nth-of-type(even) { /* Sección par (Nuestros Trabajos) */
+    background-color: #E0E4E7; /* Fondo gris intermedio */
+    color: #333333;
+}
+
+.content-section.contact { /* Sección de Contacto específica */
+    background-color: #A7BCCF; /* Azul más claro */
+    color: #2C3E50;
+}
+
+.content-section.contact h2, .content-section.contact p {
+    color: #2C3E50;
+}
+
+.content-section.contact ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.content-section.contact ul li {
+    background: #FFFFFF;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #6A8EAE;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 1.05em;
+}
+
+.content-section.contact .note {
+    font-style: italic;
+    color: #2C3E50;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-section.contact h3 {
+    margin-top: 40px;
+    font-size: 2em;
+    color: #2C3E50;
+}
+
+.contact-info-block p a {
+    color: #2C3E50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-info-block p a:hover {
+    color: #6A8EAE;
+    text-decoration: underline;
+}
+
+.contact-info-block p i {
+    margin-right: 10px;
+    color: #6A8EAE;
+}
+
+/* Galería de Trabajos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; /* Altura fija para las imágenes */
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item h3 {
+    margin: 20px 0 10px;
+    color: #6A8EAE; /* Color de acento para nombres de producto */
+    font-size: 1.4em;
+}
+
+.gallery-item p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 15px 15px;
+    text-align: center; /* Centrar la descripción */
+    margin-bottom: 0;
+}
+
+.gallery-item .description {
+    font-size: 0.95em;
+    color: #777;
+    padding: 0 15px 20px;
+    text-align: center;
+}
+
+.instagram-cta {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.instagram-link {
+    color: #E1306C; /* Color típico de Instagram */
+    text-decoration: none;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.instagram-link:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+.instagram-link .fab {
+    margin-right: 5px;
+}
+
+
+/* Footer */
+footer {
+    background: #2C3E50; /* Mismo gris oscuro que el header */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 0; /* Sin margen superior */
+    font-size: 0.95em;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #ccc;
+    text-align: center;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header .logo {
+        float: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    header nav ul {
+        float: none;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    header nav ul li {
+        display: block; /* Apila los elementos del menú */
+        padding: 10px 0;
+    }
+
+    .hero-carousel {
+        height: 400px; /* Menor altura en móviles */
+    }
+
+    .carousel-caption h2 {
+        font-size: 2.5em;
+    }
+
+    .carousel-caption p {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .gallery-item {
+        max-width: 400px; /* Limita el ancho de los ítems de galería */
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-carousel {
+        height: 300px;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.8em;
+    }
+
+    .carousel-caption p {
+        font-size: 1em;
+    }
+}
